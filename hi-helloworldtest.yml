@@ -1,0 +1,12 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: https://ofs.u-code.io
+functions:
+  hi-helloworldtest:
+    lang: go
+    handler: ./hi-helloworldtest
+    image: gitlab.udevs.io:5050/ucode_functions_group/hi-helloworldtest/hi-helloworldtest:latest
+
+    constraints:
+    - "workload=openfaas-fn"
